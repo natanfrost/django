@@ -15,6 +15,7 @@ def home(request):
     return render(request, "home.html", context)
 
 def contact(request):
+    title = 'Contact Us'
     form = ContactForm(request.POST or None)
     result = ''
     if form.is_valid():
@@ -33,5 +34,6 @@ def contact(request):
     context = {
         'form': form,
         'result': result,
+        'title': title,
     }
     return render(request, 'forms.html', context)

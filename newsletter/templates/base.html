@@ -8,11 +8,11 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="">
 
     <title>
       {% block head_title %}
-      Static Top Navbar Example for Bootstrap
+      Django is nice
       {% endblock %}
     </title>
     <!-- Bootstrap core CSS -->
@@ -33,22 +33,15 @@
   </head>
 
   <body>
-
-    <!-- Static navbar -->
-
     {% include 'navbar.html' %}
 
     <div class="container">
 
-      <div class="jumbotron">
-      {% block jumbotron %}
-      {% endblock %}
-      </div>
+      {% block jumbotron %}{% endblock %}
 
-      {% block content %}
-      {% endblock %}
+      {% block content %}{% endblock %}
 
-    </div> <!-- /container -->
+    </div>
 
 
     <!-- Bootstrap core JavaScript
