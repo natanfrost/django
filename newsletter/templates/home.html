@@ -1,22 +1,31 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
-{% block content %}
-<!-- Main component for a primary marketing message or call to action -->
-<div class="jumbotron">
-  <h1>Navbar example</h1>
-  <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-  <p>To see the difference between static and fixed top navbars, just scroll.</p>
-  <p>
-    <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-  </p>
+{% block head_title %} Welcome | {{ block.super }}{% endblock %}
+
+{% block jumbotron %}
+<div class="row">
+  <div class="col-sm-6">
+    <h1>DarkSide</h1>
+    <p>If you are looking for joining our forces here in the Death Start, don't waste your time anymore!</p>
+    <p>
+      <a class="btn btn-lg btn-primary" href="" role="button">Join us</a>
+    </p>
+  </div>
+  <div class="col-sm-6" style="background-color:black;height:300px">
+  </div>
 </div>
 {% endblock  %}
 
-<h2> Do what you want cause a pirte is free. </h2>
-<h3> Sign up now!</h3>
+{% block content %}
+<div class="row">
+  <div class="col-xs-3 pull-right">
+    <h3> Sign up now!</h3>
 
-<form method="POST" action="">{% csrf_token %}
-{{ form.as_p }}
-
-<input type="submit" value="Aye!" />
-</form>
+    <form method="POST" action="">{% csrf_token %}
+    {{ form|crispy }}
+    <input class ='btn btn-primary' type="submit" value="Aye!" />
+    </form>
+  </div>
+</div>
+{% endblock %}

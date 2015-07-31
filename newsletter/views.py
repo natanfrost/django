@@ -12,7 +12,7 @@ def home(request):
         'form': form,
         'result': 'Prepate your message!'
     }
-    return render(request, "base.html", context)
+    return render(request, "home.html", context)
 
 def contact(request):
     form = ContactForm(request.POST or None)
