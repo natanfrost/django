@@ -4,7 +4,7 @@ from django.db import models
 class SignUp(models.Model):
     class Meta:
         db_table = 'sign_up'
-        
+
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=20, blank=True, null=True)
     email = models.EmailField()
